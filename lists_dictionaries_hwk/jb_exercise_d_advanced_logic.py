@@ -15,6 +15,8 @@ print(max(numbers) - min(numbers))
 
 # 3. Print True if the list contains a 2 next to a 2 somewhere.
 
+# This is probably too complicated for the question but is better optimised
+# for larger lists of ints.
 last_index = -1
 value_to_search = 2 #no magic numbers!
 result = False
