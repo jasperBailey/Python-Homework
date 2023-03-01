@@ -23,6 +23,7 @@ print(stops.index("Linlithgow"))
 stops.remove("Livingston")
 #6
 stops.pop(2)
+#stops.pop(stops.index("Cumbernauld")) better! NO MAGIC NUMBERS!!
 #7
 print(len(stops))
 #8
@@ -32,3 +33,4 @@ stops.reverse()
 #10
 for elem in stops:
     print(elem)
+#maybe use "stop" instead of "elem" - more descriptive
