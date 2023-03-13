@@ -6,16 +6,17 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room = Room(4, 10.0)
         self.songs = [
-            Song("Ritual Annihilation"),
-            Song("Trains"),
-            Song("Mamma Mia")
+            Song("Ritual Annihilation", "Cannibal Corpse"),
+            Song("Trains", "Porcupine Tree"),
+            Song("Mamma Mia", "ABBA"),
+            Song("Chromology", "Thank You Scientist")
         ]
         self.guests = [
-            Guest("Jasper", 20.0),
-            Guest("Alex", 20.0),
-            Guest("Ed", 20.0),
-            Guest("Jack", 20.0),
-            Guest("Josh", 20.0)
+            Guest("Jasper", 20.0, self.songs[1]),
+            Guest("Alex", 20.0, self.songs[0]),
+            Guest("Ed", 20.0, self.songs[3]),
+            Guest("Jack", 20.0, self.songs[0]),
+            Guest("Josh", 20.0, self.songs[2])
         ]
 
     def test_has_playlist(self):
@@ -49,7 +50,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.guests[:-1], self.room.guests)
 
     def test_add_guest_insufficient_funds(self):
-        poor_guest = Guest("Jasper", 5.0)
+        poor_guest = Guest("Jasper", 5.0, self.songs[1])
         self.room.add_guest(poor_guest)
         self.assertEqual([], self.room.guests)
         self.assertEqual(5.0, poor_guest.cash)

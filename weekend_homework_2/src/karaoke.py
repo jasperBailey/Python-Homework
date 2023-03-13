@@ -1,14 +1,22 @@
 class Song:
-    def __init__(self, name):
+    def __init__(self, name, artist):
         self.name = name
+        self.artist = artist
+
+    def __eq__(self, other):
+        return self.name == other.name and self.artist == other.artist
 
 class Guest:
-    def __init__(self, name, cash):
+    def __init__(self, name, cash, fav_song):
         self.name = name
         self.cash = cash
+        self.fav_song = fav_song
 
     def __repr__(self):
         return f"Guest('{self.name}', {self.cash})"
+    
+    def __eq__(self, other):
+        return self.name == other.name and self.fav_song == other.fav_song
     
     def can_afford(self, amount):
         return self.cash >= amount

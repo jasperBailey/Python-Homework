@@ -4,7 +4,12 @@ from src.karaoke import *
 class TestGuest(unittest.TestCase):
     
     def setUp(self):
-        self.guest = Guest("Jasper", 20.0)
+        self.song = Song("Trains", "Porcupine Tree")
+        self.guest = Guest("Jasper", 20.0, self.song)
+
+    def test___eq__(self):
+        self.guest2 = Guest("Jasper", 50.0, self.song)
+        self.assertTrue(self.guest == self.guest2)
 
     def test_has_name(self):
         self.assertEqual("Jasper", self.guest.name)
