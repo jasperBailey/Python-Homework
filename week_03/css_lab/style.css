@@ -52,6 +52,7 @@ form {
   margin: 7px 30px;
   border: solid 1px grey;
   border-radius: 5px;
+  color: darkgrey
 }
 
 .login-button {
@@ -110,4 +111,8 @@ hr:after {
   font-family: sans-serif;
   color: grey;
   font-size: 0.7rem
+}
+
+a {
+  color: grey;
 }
